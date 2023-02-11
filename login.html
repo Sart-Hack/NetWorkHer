@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--meta Tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NetWorkHer</title>
+    
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images\favicon.png">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <!-- Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="css\style.css" rel="stylesheet">
+
+</head>
+<body>
+    <button id="GoogleAuthButton" class="authButton">Login with Google</button> 
+    <button id="loginbtn" onclick="requestMsg()">Login to Phantom</button>
+    <button id="logOutbtn" onclick="logOut()">Logout</button>
+    <div id="userData">
+      <strong>User Data</strong>
+      <p id="userSession">
+        <!-- User session data goes here -->
+      </p>
+    </div>
+  </body>
+  <script>
+    // Space for Client Js code
+    let provider = null;
+    const requestMsg = async () => {
+      if (window.solana.isPhantom) {
+        provider = window.phantom.solana;
+      } else {
+        throw new Error("Phantom wallet is required!!");
+      }
+      const resp = await provider.connect();
+      const address = resp.publicKey.toString();
+
+      const response = await fetch("/requestMessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          address,
+        }),
+      });
+      const { message } = (await response.json()).data;
+      console.log(message);
+      verifyMessage(message);
+    };
+
+    const verifyMessage = async (message) => {
+      const encodedMessage = new TextEncoder().encode(message);
+      const signedMessage = await provider.signMessage(encodedMessage, "utf8");
+      const response = await fetch("/verifySignature", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          signature: signedMessage.signature,
+          message,
+        }),
+      });
+      const verifiedData = await response.json();
+      console.log(verifiedData);
+      init();
+      storeSession(verifiedData);
+    };
+
+    const verifyAuth = async () => {
+      const response = await fetch("/verifyAuth", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      const authStatus = await response.json();
+      return authStatus;
+    };
+
+    window.onload = () => init();
+
+    const init = async () => {
+      const { auth } = await verifyAuth();
+      console.log({ auth });
+      if (auth) {
+        loginbtn.style = "display: none;";
+        logOutbtn.style = "display: block;";
+        userData.style = "display: block;";
+        loadSession(window.sessionStorage.getItem("UserData"));
+      } else {
+        loginbtn.style = "display: block;";
+        logOutbtn.style = "display: none;";
+        userData.style = "display: none;";
+        window.sessionStorage.removeItem("UserData");
+      }
+    };
+
+    const logOut = async () => {
+      await fetch("/logout", {
+        method: "DELETE",
+      });
+      init();
+    };
+
+    const storeSession = async (verifiedData) => {
+      window.sessionStorage.setItem(
+        "UserData",
+        JSON.stringify(verifiedData.data)
+      );
+    };
+
+    const loadSession = async (sessionData) => {
+      const { address, network, profileId } = JSON.parse(sessionData);
+      userSession.innerHTML = `
+      <p>Address: ${address}</p>
+      <p>Profile Id: ${profileId}</p>
+      <p>Solana Network: ${network}</p>
+      `;
+    };
+  </script>
+    <script type="module">
+        // Importing functionality from firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        //Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyB1vOqOV9rAFLMMWaPtpwXc0hNlh8-v6fI",
+          authDomain: "networkher-cb199.firebaseapp.com",
+          projectId: "networkher-cb199",
+          storageBucket: "networkher-cb199.appspot.com",
+          messagingSenderId: "884574179860",
+          appId: "1:884574179860:web:0e65a6f6c8c5551f128d01",
+          measurementId: "G-JPDWKY1VLS"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+
+    
+</body>
+</html>
