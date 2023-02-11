@@ -124,10 +124,14 @@ footer button:hover {
 /* Media Querry */
 @media only screen and (max-width: 768px){
     /*Mobile Phones*/
-
+    
     .WelcomeSegment{
         top: 40%;
         left: 40%;
+    }
+
+    .WelcomeSegment.navbar-active{
+        top:70%;
     }
 
     .WelcomeSegment h1{
