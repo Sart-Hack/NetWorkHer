@@ -1,0 +1,16 @@
+#Welcome img{
+    width: 3.125rem;
+}
+
+.LoginCard{
+    margin-top: 5rem;
+}
+
+/* Media Querry */
+@media only screen and (max-width: 768px){
+    /*Mobile Phones*/
+    #Welcome img{
+        width: 1.875rem;
+     }
+
+}
