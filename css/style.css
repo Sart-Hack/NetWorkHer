@@ -1,0 +1,99 @@
+/* Welcome Section*/
+
+.ImageSection img{
+  -webkit-filter: brightness(0.5);
+  filter: brightness(0.5);
+}
+
+.WelcomeSegment{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Righteous', cursive;
+}
+
+.WelcomeSegment h1{
+    font-size: 110px;
+}
+
+button {
+    transition: all .5s ease;
+    color: #fff;
+    border: 3px solid white;
+    font-family:'Montserrat', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1;
+    font-size: 1.063rem;
+    background-color : transparent;
+    padding: 0.625rem;
+    outline: none;
+    border-radius: 0.25rem;
+}
+
+button:hover {
+    color: #001F3F;
+    background-color: #fff;
+}
+
+.btn1{
+    margin-right: 1.25rem;
+}
+
+/*Introductio Section*/
+
+.IntroSection{
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+}
+/* Utility Section */
+
+.carousel-inner > .item > img {
+    width:18.75rem;
+    height:11.25rem;
+}
+
+/* Contact section */
+
+#ContactForm{
+    padding: 6.25rem;
+}
+
+/* footer */
+
+.social_image{
+    width: 50px;
+    height: 25px;
+}
+
+.socialContainer{
+    left: 2.4em;
+}
+
+
+/* Media Querry */
+@media only screen and (max-width: 768px){
+    /*Mobile Phones*/
+
+    .WelcomeSegment{
+        top: 40%;
+        left: 40%;
+    }
+
+    .WelcomeSegment h1{
+        font-size: 2rem;
+    }
+
+    button{
+        padding: 0.313rem;
+        font-size: 0.625rem;
+    }
+
+    .btn1{
+        margin-right: 0;
+        margin-bottom: 0.313rem;
+    }
+}
