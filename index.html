@@ -8,61 +8,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>NetWorkHer</title>
-
+    
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="images\favicon.png">
 
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
     <!-- Css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="css\style.css" rel="stylesheet">
 
 </head>
 <body>
 
     <!--Nav Bar-->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
+          <img src="images\Logo.png" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
           <a class="navbar-brand" href="#">NetWorkHer</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler navFunction" onkeypress="moveDivDown()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link disabled">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="#">GlassDoor</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Job Opportunities</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+                  Events
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  <li><a class="dropdown-item" href="#">Networking Events</a></li>
+                  <li><a class="dropdown-item" href="#">Development workshops</a></li>
+                  <li><a class="dropdown-item" href="#">Hackthons</a></li>
+                  <li><a class="dropdown-item" href="#">Carrer Fairs</a></li>
+                  <li><a class="dropdown-item" href="#">Tech Talks & webinars</a></li>
                 </ul>
               </li>
+            </ul>
+            <ul class="navbar-nav justify-content-end">
               <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
+                <a class="nav-link" href="#">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
       </nav>
 
       <!--Section: Welcome Page-->
       <section id="Welcome">
+        <div class="ImageSection">
+          <img src="images\welcomeSectionImage.jpg" class="img-fluid" alt="WorkingWomen">
+        </div>
+        <div class="WelcomeSegment">
+          <h1>NetWorkHer</h1>
+          <h2>Welcomes You</h2>
+          <button class="btn1">Get Started</button>
+          <button class="">Check Upcoming Events</button>
+        </div>
+        <div class="IntroSection">
+          <h3>AIM</h3>
+          <p>Adding soon</p>
+        </div>
       </section>
 
-      <!--Section: Showoff Page-->
-      <section id=""></section>
+      <!--Section: Utility Page-->
+      <section id="Utility">
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img src="images\womenWorking.jpg" class="" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img src="images\samplePic.png" class="" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img src="images\samplePic.png" class="" alt="...">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <!--Section: Contact us-->
+      <section id="Contacts">
+        <div id="ContactForm">
+          <h2>Contact Us</h2> <!--Changes need-->
+          <form class="row g-3">
+            <div class="col-md-6">
+              <label for="inputEmail4" class="form-label">Email</label>
+              <input type="email" class="form-control" id="inputEmail4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" class="form-control" id="inputPassword4">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress" class="form-label">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            </div>
+            <div class="col-12">
+              <label for="inputAddress2" class="form-label">Address 2</label>
+              <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            </div>
+            <div class="col-md-6">
+              <label for="inputCity" class="form-label">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="col-md-4">
+              <label for="inputState" class="form-label">State</label>
+              <select id="inputState" class="form-select">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <label for="inputZip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+            <div class="col-12">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                  Check me out
+                </label>
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+          </form>
+        </div>
+      </section>
       <!--bootstrap JS-->
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-</body>
+      <script src="jsindex.js"></script>
+    </body>
+
+<footer class="white-section" id="footer">
+  <div class="container socialContainer">
+    <img src="images\icons\linkedin.svg" class="social_image" alt="linkedin">
+    <img src="images\icons\square-instagram.svg" class="social_image" alt="instagram">
+    <img src="images\icons\twitter.svg" class="social_image" alt="twitter"> 
+  </div>
+</footer>
+
 </html>
