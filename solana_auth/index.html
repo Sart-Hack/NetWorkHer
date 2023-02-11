@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="loginbtn" onclick="requestMsg()">Login to Phantom</button>
+    <button id="logOutbtn" onclick="logOut()">Logout</button>
+    <div id="userData">
+      <strong>User Data</strong>
+      <p id="userSession">
+        <!-- User session data goes here -->
+      </p>
+    </div>
+  </body>
+  <script>
+    // Space for Client Js code
+    let provider = null;
+    const requestMsg = async () => {
+      if (window.solana.isPhantom) {
+        provider = window.phantom.solana;
+      } else {
+        throw new Error("Phantom wallet is required!!");
+      }
+      const resp = await provider.connect();
+      const address = resp.publicKey.toString();
+
+      const response = await fetch("/requestMessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          address,
+        }),
+      });
+      const { message } = (await response.json()).data;
+      console.log(message);
+      verifyMessage(message);
+    };
+
+    const verifyMessage = async (message) => {
+      const encodedMessage = new TextEncoder().encode(message);
+      const signedMessage = await provider.signMessage(encodedMessage, "utf8");
+      const response = await fetch("/verifySignature", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          signature: signedMessage.signature,
+          message,
+        }),
+      });
+      const verifiedData = await response.json();
+      console.log(verifiedData);
+      init();
+      storeSession(verifiedData);
+    };
+
+    const verifyAuth = async () => {
+      const response = await fetch("/verifyAuth", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      const authStatus = await response.json();
+      return authStatus;
+    };
+
+    window.onload = () => init();
+
+    const init = async () => {
+      const { auth } = await verifyAuth();
+      console.log({ auth });
+      if (auth) {
+        loginbtn.style = "display: none;";
+        logOutbtn.style = "display: block;";
+        userData.style = "display: block;";
+        loadSession(window.sessionStorage.getItem("UserData"));
+      } else {
+        loginbtn.style = "display: block;";
+        logOutbtn.style = "display: none;";
+        userData.style = "display: none;";
+        window.sessionStorage.removeItem("UserData");
+      }
+    };
+
+    const logOut = async () => {
+      await fetch("/logout", {
+        method: "DELETE",
+      });
+      init();
+    };
+
+    const storeSession = async (verifiedData) => {
+      window.sessionStorage.setItem(
+        "UserData",
+        JSON.stringify(verifiedData.data)
+      );
+    };
+
+    const loadSession = async (sessionData) => {
+      const { address, network, profileId } = JSON.parse(sessionData);
+      userSession.innerHTML = `
+      <p>Address: ${address}</p>
+      <p>Profile Id: ${profileId}</p>
+      <p>Solana Network: ${network}</p>
+      `;
+    };
+  </script>
+</html>
