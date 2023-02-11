@@ -20,10 +20,8 @@ npx nodemon auth.js
 
 https://admin.moralis.io/web3apis
 
-#### Auth API Reference
+#### Env file
 
-https://docs.moralis.io/reference/auth-api-overview
+create a .env file and use the api generated in it, as well as a secure token
 
-#### Youtube Video:
 
-https://www.youtube.com/watch?v=B-ntLw3YDD4
