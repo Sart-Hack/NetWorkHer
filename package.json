@@ -1,0 +1,19 @@
+{
+  "name": "networkher",
+  "version": "1.0.0",
+  "description": "A woman networking site for professionals in IT and related industries. Our mission is to connect women in the tech industry and provide them with the resources and support they need to succeed in their careers. This site is built using Python, HTML, CSS, and JavaScript, and features user profiles, networking opportunities, career resources, community forums, mentorship programs, news and articles, and collaboration tools. We have also integrated AI technologies, such as chatbots, recommendation systems, image and text recognition, NLP algorithms, and predictive analytics, to enhance the user experience and improve site functionality. Whether you're a seasoned professional or just starting out, our site is designed to help you connect, grow, and succeed.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://swapnilgarg7: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@github.com/swapnilgarg7/NetWorkHer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swapnilgarg7/NetWorkHer/issues"
+  },
+  "homepage": "https://github.com/swapnilgarg7/NetWorkHer#readme"
+}

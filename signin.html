@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--meta Tags-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NetWorkHer Sign In</title>
+    
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="images\favicon.png">
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <!-- Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="css\index.css" rel="stylesheet">
+    <link href="css\common.css" rel="stylesheet">
+    
+</head>
+
+<body class="bg-dark">
+    <!--Nav Bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <img src="images\Logo.png" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
+          <span class="navbar-brand mb-0 h1">NetWorkHer</span>
+        </div>
+      </nav>
+
+      <!--Section: Welcome Page-->
+      <section id="Sign In">
+        <div class="SignIn">
+            <h1>Choose An Option to Sign In</h1>
+        
+            <button class="btn1 GoogleAuthButton">Sign in with Google</button>
+            <button class="btn1">Sign In with Phantom(Solana)</button>
+        </div>
+      </section>
+    
+
+      <!-- FIREBASE STUFF -->
+      <script type="module">
+        
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+
+        //Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyB1vOqOV9rAFLMMWaPtpwXc0hNlh8-v6fI",
+          authDomain: "networkher-cb199.firebaseapp.com",
+          projectId: "networkher-cb199",
+          storageBucket: "networkher-cb199.appspot.com",
+          messagingSenderId: "884574179860",
+          appId: "1:884574179860:web:0e65a6f6c8c5551f128d01",
+          measurementId: "G-JPDWKY1VLS"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        const googleButton = document.querySelector('.GoogleAuthButton');
+        googleButton.addEventListener('click', signInWithGoogle);
+
+        function signInWithGoogle(){
+            let provider = new GoogleAuthProvider();
+            let auth = getAuth();
+            signInWithPopup(auth, provider).then(res=>{
+                console.log(res.user);
+                window.location.href="home.html";
+            }).catch(err=>{
+                console.log(err);
+            })
+        }
+
+       
+      </script>
+    
+</body>
+
+
+  
+</html>
