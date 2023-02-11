@@ -1,0 +1,82 @@
+.navbar-brand {
+    font-size: 1.875rem;
+}
+
+/* Welcome Section*/
+
+.ImageSection img{
+    -webkit-filter: brightness(0.5);
+    filter: brightness(0.5);
+  }
+  
+  .WelcomeSegment{
+      color: white;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: 130px;
+      font-family: 'Righteous', cursive;
+  }
+  
+  .WelcomeSegment h1{
+     font-size: 6.875rem;
+  }
+  
+  .WelcomeSegment p{
+    font-size: 2rem;
+  }
+
+  #Welcome button {
+      transition: all .5s ease;
+      color: #fff;
+      border: 3px solid white;
+      font-family:'Montserrat', sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1;
+      font-size: 1.75rem;
+      background-color : transparent;
+      padding: 0.625rem;
+      outline: none;
+      border-radius: 0.25rem;
+  }
+  
+  #Welcome button:hover {
+      color: #001F3F;
+      background-color: #fff;
+  }
+
+/* Media Querry */
+@media only screen and (max-width: 768px){
+    /*Mobile Phones*/
+  .WelcomeSegment{
+    top: 10%;
+    left: 40%;
+}
+
+.WelcomeSegment.navbar-active{
+    top:80%;
+}
+
+.WelcomeSegment h1{
+    font-size: 1.75rem;
+}
+
+.WelcomeSegment p{
+    font-size: 1rem;
+}
+
+#Welcome button{
+    padding: 0.313rem;
+    font-size: 0.625rem;
+}
+
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+  }
+  
+}
