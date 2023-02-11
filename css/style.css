@@ -18,6 +18,7 @@
     font-size: 110px;
 }
 
+
 button {
     transition: all .5s ease;
     color: #fff;
@@ -77,16 +78,21 @@ button:hover {
 /* Media Querry */
 @media only screen and (max-width: 768px){
     /*Mobile Phones*/
-
+    
     .WelcomeSegment{
         top: 40%;
         left: 40%;
+    }
+
+    .WelcomeSegment.navbar-active{
+        top:70%;
     }
 
     .WelcomeSegment h1{
         font-size: 2rem;
     }
 
+   
     button{
         padding: 0.313rem;
         font-size: 0.625rem;
