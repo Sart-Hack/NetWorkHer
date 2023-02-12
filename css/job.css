@@ -1,0 +1,77 @@
+body{
+    background-color: white;
+    margin: 0px;
+}
+
+.Sidebar img{
+    width: 20px;
+}
+
+.Select{
+    margin-top: 8px;
+}
+
+.Preference{
+    margin-left: 50px;
+}
+
+.jobdesc{
+    padding-left: 0;
+}
+
+.jobdata{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.Employer{
+    background-color: grey;
+    color: white;
+    margin-bottom: 30px;
+
+}
+
+.jobDetail{
+    margin-bottom: 15px;
+}
+
+.filter{
+    width: 25px;
+    height: 15px;
+}
+
+.notForLaptop{
+    display: none;
+}
+
+.JobCard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div2 { grid-area: 1 / 2 / 2 / 3; }
+    .div3 { grid-area: 2 / 1 / 3 / 2; }
+    .div4 { grid-area: 2 / 2 / 3 / 3; }
+
+.jobButton{
+    margin-top: 16px;
+}
+
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+    .jobselect{
+        margin-top: 8px;
+    }
+
+    .notForLaptop{
+        display: block;
+    }
+
+    .jobdesc{
+        display: none;
+    }
+}
