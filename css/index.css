@@ -30,12 +30,12 @@
   #Welcome button {
       transition: all .5s ease;
       color: #fff;
-      border: 3px solid white;
+      border: 1px solid white;
       font-family:'Montserrat', sans-serif;
       text-transform: uppercase;
       text-align: center;
       line-height: 1;
-      font-size: 1.75rem;
+      font-size: 1.25rem;
       background-color : transparent;
       padding: 0.625rem;
       outline: none;

@@ -3,60 +3,84 @@ body{
     color: whitesmoke;
 }
 
-/* footer */
+.brand{
+    font-family: 'Righteous', cursive;
+}
+
 
 footer{
-    background-color: whitesmoke;
-    color:black;
-    padding: 2%;
+	background: black;
+	height: auto;
+	width: 100vw;
+	padding: 40px 0 0 0;
 }
 
-.socialMedia {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-    
-.FooterLine { grid-area: 1 / 1 / 2 / 2; }
-.SocialImages { grid-area: 1 / 2 / 2 / 3; }
-
-.SocialImages {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    }
-    
-.instagram { grid-area: 1 / 1 / 2 / 2; }
-.twitter { grid-area: 1 / 2 / 2 / 3; }
-.linkedin { grid-area: 1 / 3 / 2 / 4; }
-
-.SocialImages img{
-   width: 50px;
+/*content*/
+.footer{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+.footer p{
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
 }
 
-footer button {
-    transition: all .5s ease;
+/*social -media*/
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+    margin: 0 10px;
+}
+
+.socials a{
+    text-decoration: none;
     color: #fff;
-    padding: 0.625rem;
-    border-color: #fff;
-    background-color: transparent;
-    outline: none;
+    border: 1.1px solid white;
+    padding: 5px;
     border-radius: 50%;
 }
 
-footer button:hover {
-    background-color:peachpuff;
+.socials a i{
+    font-size: 1.1rem;
+    width: 20px;
+    transition: color .4s ease;
+}
+
+.socials a:hover i{
+    color: dodgerblue;
+}
+
+/* copyright*/
+.footer-copyright{
+    background: #000;
+}
+
+.footer-copyright p{
+    font-size: 14px;
+    word-spacing: 2px;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Media Querry */
 @media only screen and (max-width: 768px){
     /*Mobile Phones*/
     .SocialImages img{
-        width: 30px;
+        width: 15px;
      }
 
+     footer{
+        height: 100px;
+        padding: 0;
+     }
 }

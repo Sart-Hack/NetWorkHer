@@ -17,6 +17,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 
+     <!-- icons-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- Css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="css\style.css" rel="stylesheet">
@@ -30,7 +33,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <img src="images\Logo.png" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
-          <a class="navbar-brand" href="#">NetWorkHer</a>
+          <a class="navbar-brand brand" href="#">NetWorkHer</a>
           <button class="navbar-toggler navFunction" onkeypress="moveDivDown()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -44,6 +47,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="JobOpportunity.html">Job Opportunities</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="resume.html">AI Resume Builder</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -63,7 +69,7 @@
                 <a class="nav-link" href="#">Profile</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Logout</a>
+                <a class="nav-link" href="index.html">Logout</a>
               </li>
             </ul>
           </div>
@@ -187,17 +193,21 @@
       <script src="js/index.js"></script>
     </body>
 
-<footer class="" id="footer">
-  <div class="socialMedia">
-    <div class="FooterLine">
-      <h3>Join Us Today!</h3>
-    </div>
-    <div class="SocialImages">
-      <div class="twitter"><button><img src="images\icons\twitter.png" alt=""></button></div>
-      <div class="instagram"><button><img src="images\icons\instagram.png" alt=""></button></div>
-      <div class="linkedin"><button><img src="images\icons\linkedin.png" alt=""></button></div>
-    </div>
-    </div>
-</footer>
+    <footer>
+      <div class="footer">
+          <p>Join Us Today!</p>
+          <ul class="socials">
+              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a href="#"><i class="fa fa-github"></i></a></li>
+              <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+              <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+          </ul>
+          <div class="footer-copyright">
+              <p>copyright &copy;2022 </p>
+          </div>
+      </div>
+    </footer>
+    
 
 </html>

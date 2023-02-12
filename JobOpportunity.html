@@ -12,6 +12,14 @@
   <!-- favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.png">
 
+  <!--Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+   <!-- icons-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <!-- Css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -25,7 +33,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <img src="images/Logo.png" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
-      <a class="navbar-brand" href="#">NetWorkHer</a>
+      <a class="navbar-brand brand" href="#">NetWorkHer</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -40,6 +48,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" disabled>Job Opportunities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="resume.html">AI Resume Builder</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -59,7 +70,7 @@
             <a class="nav-link" href="#">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
+            <a class="nav-link" href="index.html">Logout</a>
           </li>
         </ul>
       </div>
@@ -124,8 +135,17 @@
               </div>
             </li>
             <li class="jobselect">
-              <label for="customRange2" class="form-label">Expected Salary</label>
-              <input type="range" class="form-range" min="0" max="15" id="customRange2">
+              <label class="visually-hidden" for="autoSizingSelect">Expected Salary</label>
+                <select class="form-select" id="autoSizingSelect">
+                  <option selected>Select here</option>
+                  <option value="1">0-5L</option>
+                  <option value="2">5L-10L</option>
+                  <option value="3">10L-15L</option>
+                  <option value="4">15L-20L</option>
+                  <option value="5">20L-25L</option>
+                  <option value="6">25L-30L</option>
+                  <option value="7">>30L</option>
+                </select>
             </li>
             <li>
               <li class="Preference jobselect">
@@ -197,8 +217,17 @@
                 </div>
               </li>
               <li class="Select">
-                <label for="customRange2" class="form-label">Expected Salary</label>
-                <input type="range" class="form-range" min="0" max="15" id="customRange2">
+                <label class="visually-hidden" for="autoSizingSelect">Expected Salary</label>
+                <select class="form-select" id="autoSizingSelect">
+                  <option selected>Select here</option>
+                  <option value="1">0-5L</option>
+                  <option value="2">5L-10L</option>
+                  <option value="3">10L-15L</option>
+                  <option value="4">15L-20L</option>
+                  <option value="5">20L-25L</option>
+                  <option value="6">25L-30L</option>
+                  <option value="7">>30L</option>
+                </select>
               </li>
               <li class="Preference">
                 <button class="btn btn-outline-success">Set Preference</button>
@@ -371,16 +400,19 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
 </body>
-<footer class="" id="footer">
-  <div class="socialMedia">
-    <div class="FooterLine">
-      <h3>Join Us Today!</h3>
-    </div>
-    <div class="SocialImages">
-      <div class="twitter"><button><img src="images\icons\twitter.png" alt=""></button></div>
-      <div class="instagram"><button><img src="images\icons\instagram.png" alt=""></button></div>
-      <div class="linkedin"><button><img src="images\icons\linkedin.png" alt=""></button></div>
-    </div>
+<footer>
+  <div class="footer">
+      <p>Join Us Today!</p>
+      <ul class="socials">
+          <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fa fa-github"></i></a></li>
+          <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
+          <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+      </ul>
+      <div class="footer-copyright">
+          <p>copyright &copy;2022 </p>
+      </div>
   </div>
 </footer>
 

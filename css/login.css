@@ -1,3 +1,7 @@
+body{
+    background-color: whitesmoke;
+}
+
 #Welcome img{
     width: 3.125rem;
 }
@@ -6,11 +10,23 @@
     margin-top: 5rem;
 }
 
+#userData{
+    display: none;
+}
+
+.card{
+    padding: 40px;
+}
+
 /* Media Querry */
 @media only screen and (max-width: 768px){
     /*Mobile Phones*/
     #Welcome img{
         width: 1.875rem;
      }
+
+     #userData{
+        display: none;
+    }
 
 }
