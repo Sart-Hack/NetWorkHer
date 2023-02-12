@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--meta Tags-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetWorkHer</title>
+
+  <!-- favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon.png">
+
+  <!-- Css -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="css\common.css" rel="stylesheet">
+  <link href="css\job.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!--Nav Bar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="images/Logo.png" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
+      <a class="navbar-brand" href="#">NetWorkHer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">GlassDoor</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" disabled>Job Opportunities</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Events
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Networking Events</a></li>
+              <li><a class="dropdown-item" href="#">Development workshops</a></li>
+              <li><a class="dropdown-item" href="#">Hackthons</a></li>
+              <li><a class="dropdown-item" href="#">Carrer Fairs</a></li>
+              <li><a class="dropdown-item" href="#">Tech Talks & webinars</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Nav Bar for Job preference-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark notForLaptop">
+      <div class="container-fluid">
+        <img src="images\icons\filter.png" alt="Logo" width="64" height="64" class="d-inline-block align-text-top filter">
+        <a class="navbar-brand" href="#">Filter</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContentJob"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContentJob">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item jobselect">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search Corporate" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </li>
+            <li class="nav-item jobselect">
+              <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                <select class="form-select" id="autoSizingSelect">
+                  <option selected>job type</option>
+                  <option value="1">Data Analyst</option>
+                  <option value="2">Software Developer</option>
+                  <option value="3">Android Mobile App Developer</option>
+                  <option value="3">Frontend Developer</option>
+                  <option value="3">AI researcher</option>
+                  <option value="3">Game Developer</option>
+                  <option value="3">FullStack Developer</option>
+                  <option value="3">BlockChain Engineer</option>
+                </select>
+            </li>
+            <li class="nav-item jobselect">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+            </li>
+            <li class="nav-item jobselect">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Work From Home
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Hybrid mode
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Part time
+                </label>
+              </div>
+            </li>
+            <li class="jobselect">
+              <label for="customRange2" class="form-label">Expected Salary</label>
+              <input type="range" class="form-range" min="0" max="15" id="customRange2">
+            </li>
+            <li>
+              <li class="Preference jobselect">
+                <button class="btn btn-outline-success">Set Preference</button>
+              </li>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 jobdesc">
+        <!--Side Bar -->
+        <main class="d-flex flex-nowrap Sidebar">
+          <h1 class="visually-hidden">Sidebars examples</h1>
+          <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+              <img src="images\icons\filter.png" alt="Filter">
+              <span class="fs-4">Filter</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="">
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search Corporate" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </li>
+              <li class="Select">
+                <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                <select class="form-select" id="autoSizingSelect">
+                  <option selected>job type</option>
+                  <option value="1">Data Analyst</option>
+                  <option value="2">Software Developer</option>
+                  <option value="3">Android Mobile App Developer</option>
+                  <option value="3">Frontend Developer</option>
+                  <option value="3">AI researcher</option>
+                  <option value="3">Game Developer</option>
+                  <option value="3">FullStack Developer</option>
+                  <option value="3">BlockChain Engineer</option>
+                </select>
+              </li>
+              <li class="Select">
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Location" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+              </li>
+              <li class="Select">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Work From Home
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Hybrid mode
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                  <label class="form-check-label" for="flexCheckDefault">
+                    Part time
+                  </label>
+                </div>
+              </li>
+              <li class="Select">
+                <label for="customRange2" class="form-label">Expected Salary</label>
+                <input type="range" class="form-range" min="0" max="15" id="customRange2">
+              </li>
+              <li class="Preference">
+                <button class="btn btn-outline-success">Set Preference</button>
+              </li>
+            </ul>
+          </div>
+        </main>
+      </div>
+
+      <div class="col-md-8 jobdata">
+        <div class="card Employer">
+          <div class="card-header">
+            Hire Employees?
+          </div>
+          <div class="card-body">
+            <h5 class="card-title ">Post your job</h5>
+            <p class="card-text">"Hire smarter, not harder. Post your job with us and let us help you find your dream team."</p>
+            <a href="https://forms.gle/V7H22JYZUjGnYuZMA" class="btn btn-secondary">Check in here</a>
+          </div>
+        </div>
+
+        <div class="card jobDetail">
+          <div class="card-header text-bg-dark border-dark">
+            Google
+          </div>
+          <div class="card-body text-bg-dark border-dark">
+            <h5 class="card-title ">Software Developer Role</h5>
+            <p>Full time</p>
+            <div class="JobCard">
+              <div class="div1">
+                <p class="card-text">
+                  Location : Hyderabad
+                 </p>
+              </div>
+              <div class="div2">
+                <p class="card-text">
+                  CTC : 24L-22L
+                </p> 
+              </div>
+              <div class="div3">
+                <p class="card-text">
+                  Posted on: 10 Febuary 2023
+                </p> 
+              </div>
+              <div class="div4">
+                <p class="card-text">
+                  Last date to Submit: 12 March 2023
+                </p>
+              </div>
+            </div>
+            <div class="jobButton">
+              <a href="#" class="btn btn-primary btn-dark btn-secondary btn-outline-success">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card jobDetail">
+          <div class="card-header text-bg-dark border-dark">
+            Let's Code
+          </div>
+          <div class="card-body text-bg-dark border-dark">
+            <h5 class="card-title ">Web Development</h5>
+            <p>Internship</p>
+            <div class="JobCard">
+              <div class="div1">
+                <p class="card-text">
+                  Location : Work From Home
+                 </p>
+              </div>
+              <div class="div2">
+                <p class="card-text">
+                  Stipened : 20k-22k
+                </p> 
+              </div>
+              <div class="div3">
+                <p class="card-text">
+                  Posted on: 9 Febuary 2023
+                </p> 
+              </div>
+              <div class="div4">
+                <p class="card-text">
+                  Last date to Submit: 1 March 2023
+                </p>
+              </div>
+            </div>
+            <div class="jobButton">
+              <a href="#" class="btn btn-primary btn-dark btn-secondary btn-outline-success">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card jobDetail">
+          <div class="card-header text-bg-dark border-dark">
+            Solution providers
+          </div>
+          <div class="card-body text-bg-dark border-dark">
+            <h5 class="card-title ">ML Researcher</h5>
+            <p>Part time</p>
+            <div class="JobCard">
+              <div class="div1">
+                <p class="card-text">
+                  Location : Delhi
+                 </p>
+              </div>
+              <div class="div2">
+                <p class="card-text">
+                  CTC : 13L-15L
+                </p> 
+              </div>
+              <div class="div3">
+                <p class="card-text">
+                  Posted on: 6 Febuary 2023
+                </p> 
+              </div>
+              <div class="div4">
+                <p class="card-text">
+                  Last date to Submit: 28 Febuary 2023
+                </p>
+              </div>
+            </div>
+            <div class="jobButton">
+              <a href="#" class="btn btn-primary btn-dark btn-secondary btn-outline-success">View Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card jobDetail">
+          <div class="card-header text-bg-dark border-dark">
+            Microsoft Student Program
+          </div>
+          <div class="card-body text-bg-dark border-dark">
+            <h5 class="card-title ">Student Trainee</h5>
+            <p>Internship</p>
+            <div class="JobCard">
+              <div class="div1">
+                <p class="card-text">
+                  Location : Gurugram
+                 </p>
+              </div>
+              <div class="div2">
+                <p class="card-text">
+                  Stipened: 30k-32k
+                </p> 
+              </div>
+              <div class="div3">
+                <p class="card-text">
+                  Posted on: 21 January 2023
+                </p> 
+              </div>
+              <div class="div4">
+                <p class="card-text">
+                  Last date to Submit: 18 Febuary 2023
+                </p>
+              </div>
+            </div>
+            <div class="jobButton">
+              <a href="#" class="btn btn-primary btn-dark btn-secondary btn-outline-success">View Details</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!--bootstrap JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+<footer class="" id="footer">
+  <div class="socialMedia">
+    <div class="FooterLine">
+      <h3>Join Us Today!</h3>
+    </div>
+    <div class="SocialImages">
+      <div class="twitter"><button><img src="images\icons\twitter.png" alt=""></button></div>
+      <div class="instagram"><button><img src="images\icons\instagram.png" alt=""></button></div>
+      <div class="linkedin"><button><img src="images\icons\linkedin.png" alt=""></button></div>
+    </div>
+  </div>
+</footer>
+
+</html>
