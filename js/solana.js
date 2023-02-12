@@ -6,10 +6,11 @@ function signInWithPhantom(){
     window.solana.connect;
   
     window.solana.request({ method: 'connect' });
-    window.solana.on('connect', () => {
-        window.location.href = "home.html";
-        console.log('Connected');
-    });
+    window.location.href = "home.html";
+//     window.solana.on('connect', () => {
+//         window.location.href = "home.html";
+//         console.log('Connected');
+//     });
     
 };
 
