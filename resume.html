@@ -295,6 +295,13 @@
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
         <script src="js\app.js"></script>
+        <script>
+            const resumeButton = document.querySelector('.ResumeButton');
+            function openResumePage(){
+                window.location.href = "https://sart-hack.github.io/resume_maker/";
+            }
+            resumeButton.addEventListener('click', openResumePage);
+        </script>
 
     </body>
 
