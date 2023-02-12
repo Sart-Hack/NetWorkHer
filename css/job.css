@@ -13,6 +13,7 @@ body{
 
 .Preference{
     margin-left: 50px;
+    margin-top: 50px;
 }
 
 .jobdesc{
@@ -67,11 +68,45 @@ body{
         margin-top: 8px;
     }
 
+    .Preference{
+        margin-top: 15px;
+    }
+
     .notForLaptop{
         display: block;
     }
 
     .jobdesc{
         display: none;
+    }
+
+    footer{
+        height:auto;
+        width: 100%;
+    }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+
+    .jobselect{
+        margin-top: 18px;
+    }
+
+    .Preference{
+        margin-top: 15px;
+    }
+
+    .notForLaptop{
+        display: block;
+    }
+
+    .jobdesc{
+        display: none;
+    }
+
+    footer{
+        height: auto;
+        width: 100%;
     }
 }

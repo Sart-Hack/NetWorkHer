@@ -21,12 +21,12 @@
 #Welcome button {
     transition: all .5s ease;
     color: #fff;
-    border: 3px solid white;
+    border: 1px solid white;
     font-family:'Montserrat', sans-serif;
     text-transform: uppercase;
     text-align: center;
     line-height: 1;
-    font-size: 1.063rem;
+    font-size: 1rem;
     background-color : transparent;
     padding: 0.625rem;
     outline: none;
@@ -53,11 +53,11 @@
 }
 
 .IntroSection h3{
-    font-size: 3.75rem;
+    font-size: 3rem;
 }
 
 .IntroSection p{
-    font-size: 1.563rem;
+    font-size: 1.5rem;
 }
 
 /* Utility Section */
@@ -95,12 +95,12 @@
     /*Mobile Phones*/
     
     .WelcomeSegment{
-        top: 40%;
+        top: 39%;
         left: 40%;
     }
 
     .WelcomeSegment.navbar-active{
-        top:80%;
+        top:85%;
     }
 
     .WelcomeSegment h1{
@@ -109,7 +109,7 @@
 
     #Welcome button{
         padding: 0.313rem;
-        font-size: 0.625rem;
+        font-size: 0.5rem;
     }
 
     .btn1{
@@ -118,10 +118,35 @@
     }
 
     .IntroSection h3{
-        font-size: 1.875rem;
+        font-size: 1.5rem;
     }
     
     .IntroSection p{
-        font-size: 0.938rem;
+        font-size: 0.8rem;
     }
 }
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px){
+
+    .WelcomeSegment h1{
+        font-size: 3rem;
+    }
+
+    #Welcome button{
+        font-size: 0.8rem;
+    }
+
+    .btn1{
+        margin-right: 2rem;
+    }
+
+    .IntroSection h3{
+        font-size: 2rem;
+    }
+    
+    .IntroSection p{
+        font-size: 0.95rem;
+    }
+}
+    
